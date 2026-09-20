@@ -9,6 +9,7 @@ import DiveSafaris from "./pages/DiveSafaris";
 import Courses from "./pages/Courses";
 import Packages from "./pages/Packages";
 import Reservations from "./pages/Reservations";
+import ThankYou from "./pages/ThankYou";
 import Promotions from "./pages/Promotions";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
@@ -38,6 +39,7 @@ function Router() {
       <Route path="/courses" component={Courses} />
       <Route path="/packages" component={Packages} />
       <Route path="/reservations" component={Reservations} />
+      <Route path="/thank-you" component={ThankYou} />
       <Route path="/promotions" component={Promotions} />
       <Route path="/services" component={Services} />
       <Route path="/services/:id" component={ServiceDetail} />
