@@ -109,7 +109,7 @@ export default function LoyaltyClaim() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="John Doe"
-                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
 
@@ -121,7 +121,7 @@ export default function LoyaltyClaim() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@example.com"
-                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
 
@@ -131,7 +131,7 @@ export default function LoyaltyClaim() {
                     type="date"
                     value={previousVisitDate}
                     onChange={(e) => setPreviousVisitDate(e.target.value)}
-                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                   <span className="text-[11px] text-muted-foreground">Not sure of the exact date? An approximate month/year is fine.</span>
                 </div>
@@ -143,7 +143,7 @@ export default function LoyaltyClaim() {
                     value={bookingReference}
                     onChange={(e) => setBookingReference(e.target.value)}
                     placeholder="e.g. DD-XXXXXXXXX"
-                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                    className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
 

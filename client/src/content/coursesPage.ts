@@ -39,7 +39,7 @@ export const COURSES_PAGE: CoursesPage = {
   additionalCoursesHeading: 'Additional Courses',
   additionalCourses: [
     { id: 'bubble-maker', name: 'Bubble Maker License', overview: 'For children starting at age 8. Introduction to scuba diving in controlled environments.' },
-    { id: 'discover-scuba', name: 'Discover Scuba Diving', overview: 'Try scuba diving without certification. Perfect for beginners wanting to experience the underwater world.' },
+    { id: 'discover-scuba', name: 'Discover Scuba Diving', overview: 'Try scuba diving without certification. Perfect for beginners wanting to experience the underwater world.', detailPath: '/courses/discover-scuba-diving' },
     { id: 'skin-diving', name: 'Skin Diving', overview: 'Learn freediving and snorkeling techniques for exploring shallow waters.' },
     { id: 'efr', name: 'Emergency First Response (EFR) Training', overview: 'Essential first aid and CPR certification for divers and non-divers alike.' },
     { id: 'multi-level', name: 'Multi-Level Diving', overview: 'Optimize your dive profiles and extend bottom times with multi-level diving techniques.' },

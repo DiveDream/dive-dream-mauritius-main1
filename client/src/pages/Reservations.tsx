@@ -158,7 +158,7 @@ export default function Reservations() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             {/* Left/Middle Column: Booking Form */}
             <div className="lg:col-span-2 text-left">
-              <div className="glass-panel p-8 md:p-10">
+              <div className="glass-panel p-5 sm:p-8 md:p-10">
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-6">Reservation Details</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
@@ -167,35 +167,41 @@ export default function Reservations() {
                     <h3 className="text-sm font-bold uppercase tracking-wider text-primary pb-2 border-b border-border">Personal Info</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="flex flex-col space-y-1.5 md:col-span-2">
-                        <label className="text-xs text-muted-foreground font-semibold">Full Name *</label>
+                        <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-name">Full Name *</label>
                         <input
+                          id="res-name"
                           type="text"
+                          autoComplete="name"
                           required
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
                           placeholder="John Doe"
-                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                         />
                       </div>
                       <div className="flex flex-col space-y-1.5">
-                        <label className="text-xs text-muted-foreground font-semibold">Phone Number</label>
+                        <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-phone">Phone Number</label>
                         <input
+                          id="res-phone"
                           type="tel"
+                          autoComplete="tel"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="+230 5XXX XXXX"
-                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                         />
                       </div>
                       <div className="flex flex-col space-y-1.5">
-                        <label className="text-xs text-muted-foreground font-semibold">Email Address *</label>
+                        <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-email">Email Address *</label>
                         <input
+                          id="res-email"
                           type="email"
+                          autoComplete="email"
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="john@example.com"
-                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                         />
                       </div>
                     </div>
@@ -206,32 +212,35 @@ export default function Reservations() {
                     <h3 className="text-sm font-bold uppercase tracking-wider text-primary pb-2 border-b border-border">Itinerary</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="flex flex-col space-y-1.5">
-                        <label className="text-xs text-muted-foreground font-semibold">Date *</label>
+                        <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-date">Date *</label>
                         <input
+                          id="res-date"
                           type="date"
                           required
                           value={preferredDate}
                           onChange={(e) => setPreferredDate(e.target.value)}
-                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                         />
                       </div>
                       <div className="flex flex-col space-y-1.5">
-                        <label className="text-xs text-muted-foreground font-semibold">Number of People</label>
+                        <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-people">Number of People</label>
                         <input
+                          id="res-people"
                           type="number"
                           min={1}
                           max={20}
                           value={peopleCount}
                           onChange={(e) => setPeopleCount(parseInt(e.target.value) || 1)}
-                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                          className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                         />
                       </div>
                       <div className="flex flex-col space-y-1.5 md:col-span-2">
-                        <label className="text-xs text-muted-foreground font-semibold">Type of Service</label>
+                        <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-category">Type of Service</label>
                         <select
+                          id="res-category"
                           value={serviceCategory}
                           onChange={(e) => handleCategoryChange(e.target.value as ServiceCategory)}
-                          className="bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                          className="bg-background border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                         >
                           <option value="">-- Select a Category --</option>
                           <option value="packages">Dive Packages</option>
@@ -249,7 +258,7 @@ export default function Reservations() {
                             : 'max-h-0 opacity-0 overflow-hidden pointer-events-none'
                         }`}
                       >
-                        <label className="text-xs text-muted-foreground font-semibold">
+                        <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-option">
                           {serviceCategory === 'packages' && 'Select Dive Package'}
                           {serviceCategory === 'courses' && 'Select Dive Course'}
                           {serviceCategory === 'diveSafaris' && 'Select Dive Safari'}
@@ -257,9 +266,10 @@ export default function Reservations() {
                         </label>
                         {serviceCategory === 'diveSafaris' && (
                           <select
+                            id="res-option"
                             value={selectedOption}
                             onChange={(e) => setSelectedOption(e.target.value)}
-                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                           >
                             <option value="">-- Choose a Dive Safari --</option>
                             {(diveSafaris ?? []).map(d => (
@@ -269,9 +279,10 @@ export default function Reservations() {
                         )}
                         {serviceCategory === 'packages' && (
                           <select
+                            id="res-option"
                             value={selectedOption}
                             onChange={(e) => setSelectedOption(e.target.value)}
-                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                           >
                             <option value="">-- Choose a Package --</option>
                             {(packages ?? []).map(p => (
@@ -281,9 +292,10 @@ export default function Reservations() {
                         )}
                         {serviceCategory === 'courses' && (
                           <select
+                            id="res-option"
                             value={selectedOption}
                             onChange={(e) => setSelectedOption(e.target.value)}
-                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                           >
                             <option value="">-- Choose a Course --</option>
                             {(courses ?? []).map(c => (
@@ -293,9 +305,10 @@ export default function Reservations() {
                         )}
                         {serviceCategory === 'services' && (
                           <select
+                            id="res-option"
                             value={selectedOption}
                             onChange={(e) => setSelectedOption(e.target.value)}
-                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                            className="bg-background border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                           >
                             <option value="">-- Choose a Service --</option>
                             {(services ?? []).map(s => (
@@ -309,13 +322,14 @@ export default function Reservations() {
 
                   {/* Special Requests */}
                   <div className="flex flex-col space-y-1.5">
-                    <label className="text-xs text-muted-foreground font-semibold">Special Requests or Medical Disclosures</label>
+                    <label className="text-xs text-muted-foreground font-semibold" htmlFor="res-requests">Special Requests or Medical Disclosures</label>
                     <textarea
+                      id="res-requests"
                       rows={3}
                       value={specialRequests}
                       onChange={(e) => setSpecialRequests(e.target.value)}
                       placeholder="E.g., Dietary requirements for onboard buffet, medical history, preferred gear sizes..."
-                      className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                      className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                     />
                   </div>
 

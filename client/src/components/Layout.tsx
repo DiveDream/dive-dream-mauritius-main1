@@ -296,7 +296,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {footer?.columns.map((column) => (
               <div key={column.title} className="flex flex-col space-y-4">
-                <h4 className="text-base font-semibold text-foreground tracking-wide">{column.title}</h4>
+                <h2 className="text-base font-semibold text-foreground tracking-wide">{column.title}</h2>
                 <ul className="space-y-2.5 text-sm text-muted-foreground">
                   {column.links.map((link) => (
                     <li key={link.href + link.label}>

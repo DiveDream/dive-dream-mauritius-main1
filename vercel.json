@@ -2,7 +2,85 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist/public",
   "framework": "vite",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.divedreammauritius.com"
+        }
+      ],
+      "destination": "https://divedreammauritius.com/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/dive-sites",
+      "destination": "/dive-safaris",
+      "statusCode": 301
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fr/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/d0obvxx827k2f66a04e2vnot",
+      "destination": "/services/onboard-catering-refreshments",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/jbo5bdnwpec6t2c7zwji60u1",
+      "destination": "/services/underwater-photography-package-weddings-special-moments",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/n5hgal1fa2zd7ioew54pje3z",
+      "destination": "/services/airport-private-transfers",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/fuwozwu8xnufey59093elfcj",
+      "destination": "/services/guided-snorkeling-safaris",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/viz0uq1cmuuzr1xleox18j0b",
+      "destination": "/services/private-boat-charters",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/znbtvpx37a4ohwz3e645a4xb",
+      "destination": "/rebreather-diving",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/rebreather-diving",
+      "destination": "/rebreather-diving",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/services/:slug",
+      "destination": "/spa-fallback.html"
+    }
   ]
 }

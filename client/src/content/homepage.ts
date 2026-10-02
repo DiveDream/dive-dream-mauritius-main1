@@ -53,9 +53,9 @@ export const HOMEPAGE: Homepage = {
     coreCoursesLabel: 'Core Courses',
     specialtyCoursesLabel: 'Specialty Courses',
     coreCourses: [
-      { id: 'open-water', name: 'Open Water Diver Course', overview: 'The foundation of recreational diving. Learn essential skills to dive safely to 18 metres independently with a buddy.' },
-      { id: 'advanced-open-water', name: 'Advanced Open Water Diver Course', overview: 'Build on your Open Water skills with advanced techniques and deeper diving capabilities up to 30 metres.' },
-      { id: 'rescue-diver', name: 'Rescue Diver Course', overview: 'Develop rescue techniques and emergency response skills to assist other divers in distress.' },
+      { id: 'open-water', name: 'Open Water Diver Course', overview: 'The foundation of recreational diving. Learn essential skills to dive safely to 18 metres independently with a buddy.', detailPath: '/courses/open-water' },
+      { id: 'advanced-open-water', name: 'Advanced Open Water Diver Course', overview: 'Build on your Open Water skills with advanced techniques and deeper diving capabilities up to 30 metres.', detailPath: '/courses/advanced-open-water' },
+      { id: 'rescue-diver', name: 'Rescue Diver Course', overview: 'Develop rescue techniques and emergency response skills to assist other divers in distress.', detailPath: '/courses/rescue-diver' },
       { id: 'dive-master', name: 'Dive Master Course', overview: 'Professional-level training to lead dives and assist with instruction — the gateway to a diving career.' },
     ],
     specialtyNames: ['Wreck Diving', 'Underwater Photography', 'Night Dive', 'Deep Diver', 'Drift Diving', 'Enriched Air (Nitrox)'],

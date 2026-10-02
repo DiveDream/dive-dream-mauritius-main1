@@ -88,6 +88,8 @@ export default function DiveSafaris() {
             <div className="relative rounded-lg overflow-hidden">
               <img
                 src={page.mapImage}
+                loading="lazy"
+                decoding="async"
                 alt="Dive Dream Divers — Map of all 47 dive sites across Mauritius"
                 className="w-full h-auto object-contain rounded-lg transition-transform duration-700 group-hover:scale-[1.02]"
               />
@@ -159,6 +161,8 @@ export default function DiveSafaris() {
                 <div className="aspect-video relative overflow-hidden">
                   <img
                     src={activeSite.image}
+                    loading="lazy"
+                    decoding="async"
                     alt={activeSite.name}
                     className="w-full h-full object-cover"
                   />
@@ -195,9 +199,9 @@ export default function DiveSafaris() {
                   {/* Dive Sites Included */}
                   {activeSite.diveSites && activeSite.diveSites.length > 0 && (
                     <div className="mb-8">
-                      <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wider">
+                      <h3 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wider">
                         Dive Sites on This Safari
-                      </h4>
+                      </h3>
                       <div className="flex flex-wrap gap-2">
                         {activeSite.diveSites.map((diveSite) => (
                           <span key={diveSite} className="bg-secondary border border-border text-foreground px-3 py-1.5 rounded-full text-xs font-medium">
@@ -211,9 +215,9 @@ export default function DiveSafaris() {
                   {/* Site Highlights */}
                   {activeSite.highlights && activeSite.highlights.length > 0 && (
                     <div className="mb-8">
-                      <h4 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wider">
+                      <h3 className="text-foreground font-semibold mb-4 text-sm uppercase tracking-wider">
                         Why Dive {activeSite.name}?
-                      </h4>
+                      </h3>
                       <ul className="space-y-2.5">
                         {activeSite.highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-start gap-3 text-muted-foreground text-sm">
@@ -256,18 +260,18 @@ export default function DiveSafaris() {
                   {/* Secondary Details */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
                     <div>
-                      <h4 className="text-foreground font-semibold mb-3 flex items-center gap-2">
+                      <h3 className="text-foreground font-semibold mb-3 flex items-center gap-2">
                         <Sun className="w-4.5 h-4.5 text-primary" /> Environmental Conditions
-                      </h4>
+                      </h3>
                       <ul className="space-y-2 text-muted-foreground">
                         <li><strong className="text-foreground">Weather:</strong> {activeSite.weatherConditions}</li>
                         <li><strong className="text-foreground">Currents:</strong> Subject to tidal movements.</li>
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-foreground font-semibold mb-3 flex items-center gap-2">
+                      <h3 className="text-foreground font-semibold mb-3 flex items-center gap-2">
                         <Compass className="w-4.5 h-4.5 text-primary" /> Marine Biodiversity
-                      </h4>
+                      </h3>
                       <div className="flex flex-wrap gap-1.5">
                         {activeSite.marineLife.map((life, idx) => (
                           <span key={idx} className="bg-secondary border border-border text-foreground px-2.5 py-1 rounded text-xs">
@@ -277,6 +281,13 @@ export default function DiveSafaris() {
                       </div>
                     </div>
                   </div>
+
+                  <p className="mt-8 pt-6 border-t border-border text-sm text-muted-foreground">
+                    Planning more than one dive? Compare our{' '}
+                    <Link href="/packages" className="text-primary font-semibold hover:underline">dive packages</Link>
+                    , or get certified first with the{' '}
+                    <Link href="/courses/open-water" className="text-primary font-semibold hover:underline">SDI Open Water course</Link>.
+                  </p>
                 </div>
               </div>
 
@@ -305,7 +316,7 @@ export default function DiveSafaris() {
                         }`}
                       >
                         <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0">
-                          <img src={site.image} alt={site.name} className="w-full h-full object-cover" />
+                          <img src={site.image} loading="lazy" decoding="async" alt={site.name} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col justify-between py-0.5">
                           <div>

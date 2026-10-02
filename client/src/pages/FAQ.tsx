@@ -56,7 +56,7 @@ export default function FAQ() {
                 placeholder="Search questions or keywords..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-secondary/60 border border-border rounded-full py-3.5 pl-12 pr-6 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                className="w-full bg-secondary/60 border border-border rounded-full py-3.5 pl-12 pr-6 text-base sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
               />
               <Search className="w-5 h-5 text-muted-foreground absolute left-4 top-1/2 -translate-y-1/2" />
             </div>
@@ -79,6 +79,7 @@ export default function FAQ() {
           </div>
 
           {/* Accordion FAQ List */}
+          <h2 className="sr-only">Questions and answers</h2>
           <div className="space-y-4 text-left">
             {filteredFaqs.length === 0 ? (
               <div className="glass-panel p-12 text-center text-muted-foreground text-sm">
@@ -100,7 +101,7 @@ export default function FAQ() {
           <div className="mt-16 bg-red-500/5 border border-red-500/20 rounded-xl p-6 text-left flex gap-4 items-start max-w-3xl mx-auto">
             <ShieldAlert className="w-6 h-6 text-red-400 shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <h4 className="text-sm font-semibold text-foreground">{page.emergencyNotice.title}</h4>
+              <h2 className="text-sm font-semibold text-foreground">{page.emergencyNotice.title}</h2>
               <p className="text-xs text-muted-foreground leading-relaxed mb-3">
                 {page.emergencyNotice.description}
               </p>

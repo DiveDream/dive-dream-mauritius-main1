@@ -253,11 +253,11 @@ export default function Home() {
                 <span className="text-xs font-bold uppercase tracking-widest text-gold flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5" /> {homepage.promotionBanner.eyebrow}
                 </span>
-                <h3 className="text-lg md:text-xl font-bold text-foreground mt-1">{mainPromotion.title} — {mainPromotion.discount}</h3>
+                <h2 className="text-lg md:text-xl font-bold text-foreground mt-1">{mainPromotion.title} — {mainPromotion.discount}</h2>
                 <p className="text-sm text-muted-foreground max-w-xl mt-1">{mainPromotion.description}</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 shrink-0 w-full lg:w-auto">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 shrink-0 w-full lg:w-auto">
               <div className="bg-background/80 border border-gold/20 px-4 py-2 rounded-lg text-center shrink-0">
                 <span className="block font-serif text-lg font-bold text-gold">{homepage.promotionBanner.countdown.days}</span>
                 <span className="text-[10px] text-muted-foreground uppercase tracking-wider">Days</span>
@@ -313,6 +313,8 @@ export default function Home() {
                         <div className="aspect-[16/9] relative">
                           <img
                             src={slide.image}
+                            loading="lazy"
+                            decoding="async"
                             alt={slide.title}
                             className="w-full h-full object-cover"
                           />
@@ -321,7 +323,7 @@ export default function Home() {
                             className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 transition-opacity duration-300"
                             style={{ opacity: tweenVal < 0.3 ? 1 : 0 }}
                           >
-                            <h3 className="text-xl sm:text-3xl font-serif font-bold text-white mb-2">{slide.title}</h3>
+                            <p className="text-xl sm:text-3xl font-serif font-bold tracking-wide text-white mb-2">{slide.title}</p>
                             <p className="text-sm sm:text-base text-white/75 max-w-lg">{slide.subtitle}</p>
                           </div>
                         </div>
@@ -604,6 +606,8 @@ export default function Home() {
                         <div className="aspect-[16/9] relative">
                           <img
                             src={image.url}
+                            loading="lazy"
+                            decoding="async"
                             alt={image.alt}
                             className="w-full h-full object-cover"
                           />

@@ -54,7 +54,13 @@ function mapActivity(raw: RawActivity, index: number): Activity {
 // and conservation copy for the page to keep rendering real content.
 export async function getAboutPage(): Promise<AboutPage> {
   try {
-    const raw = await fetchAPI<StrapiSingleResponse<RawAboutPage>>(ENDPOINTS.aboutPage);
+    // `populate=*` only goes one level deep, so without these the section
+    // images inside mission/conservation never arrive and the page silently
+    // shows the local placeholder photos instead of the uploaded ones.
+    const raw = await fetchAPI<StrapiSingleResponse<RawAboutPage>>(ENDPOINTS.aboutPage, {
+      'populate[mission][populate]': '*',
+      'populate[conservation][populate]': '*',
+    });
     const entry = unwrapSingle(raw);
     return {
       hero: entry.hero ? mapSectionHeading(entry.hero) : ABOUT_PAGE.hero,

@@ -118,6 +118,20 @@ export function sanitizeStrapiRichText<T>(data: T): T {
 // `media?.url ?? FALLBACK_IMAGE` patterns without null-checking this too.
 export function resolveStrapiMediaUrl(media: StrapiMedia | null | undefined): string {
   if (!media?.url) return '';
-  if (media.url.startsWith('http://') || media.url.startsWith('https://')) return media.url;
+  if (media.url.startsWith('http://') || media.url.startsWith('https://')) return optimizeCloudinaryUrl(media.url);
   return `${strapiConfig.baseUrl}${media.url}`;
+}
+
+const CLOUDINARY_UPLOAD = 'res.cloudinary.com/dvyxak16/image/upload/';
+
+// Strapi uploads to Cloudinary as original JPEGs (up to ~400 KB). Asking
+// Cloudinary for f_auto/q_auto serves WebP/AVIF at a tuned quality, and
+// c_limit caps the width without ever upscaling. Only untransformed URLs
+// (version segment straight after /upload/) are rewritten.
+function optimizeCloudinaryUrl(url: string): string {
+  const idx = url.indexOf(CLOUDINARY_UPLOAD);
+  if (idx === -1) return url;
+  const rest = url.slice(idx + CLOUDINARY_UPLOAD.length);
+  if (!/^v\d+\//.test(rest)) return url;
+  return `${url.slice(0, idx + CLOUDINARY_UPLOAD.length)}f_auto,q_auto,c_limit,w_1600/${rest}`;
 }

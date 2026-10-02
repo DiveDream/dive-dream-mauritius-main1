@@ -1,8 +1,10 @@
 import Layout from '@/components/Layout';
 import { CheckCircle2, ArrowRight, Anchor, Camera, Plane, Compass, Coffee } from 'lucide-react';
-import { Link, useParams } from 'wouter';
+import { Link, Redirect, useParams } from 'wouter';
 import { useServiceDetail } from '@/hooks/useServices';
 import { PageLoader, PageError } from '@/components/common';
+import { usePageSeo } from '@/components/RouteSeo';
+import { serviceDetailSeo, serviceHref } from '@shared/seo';
 
 const SERVICE_ICONS: Record<string, typeof Plane> = {
   'airport-transfer': Plane,
@@ -14,9 +16,14 @@ const SERVICE_ICONS: Record<string, typeof Plane> = {
 export default function ServiceDetail() {
   const { id } = useParams<{ id: string }>();
   const { data: service, isLoading, error } = useServiceDetail(id);
+  const isOwnPage = !!service && serviceHref(service.id) === `/services/${id}`;
+  usePageSeo(isOwnPage ? serviceDetailSeo(service.id, service.title, service.description, service.image) : undefined);
 
   if (isLoading) return <PageLoader />;
   if (error || !service) return <PageError />;
+  // Old documentId URLs, and services that have a dedicated page elsewhere.
+  // vercel.json 301s the known ones; this covers in-app navigation.
+  if (!isOwnPage) return <Redirect to={serviceHref(service.id)} replace />;
 
   const Icon = SERVICE_ICONS[service.id] ?? Coffee;
 
@@ -50,7 +57,7 @@ export default function ServiceDetail() {
         <div className="container max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="rounded-2xl overflow-hidden border border-border shadow-lg shadow-black/10">
-              <img src={service.image} alt={service.title} className="w-full h-full object-cover aspect-[4/3]" />
+              <img src={service.image} loading="lazy" decoding="async" alt={service.title} className="w-full h-full object-cover aspect-[4/3]" />
             </div>
 
             <div className="text-left space-y-6">

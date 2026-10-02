@@ -73,15 +73,15 @@ export default function Contact() {
             {/* Left Column: Direct Contact Info */}
             <div className="space-y-6 text-left">
               <div className="glass-panel p-6 space-y-6">
-                <h3 className="text-xl font-serif font-bold text-foreground mb-4">{page.channelsHeading}</h3>
+                <h2 className="text-xl font-serif font-bold text-foreground mb-4">{page.channelsHeading}</h2>
                 <ContactInfoList items={contactItems} />
               </div>
 
               {/* Safety Shield */}
               <div className="glass-panel p-6 space-y-3 border-primary/20 bg-primary/5">
-                <h4 className="text-sm font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                <h3 className="text-sm font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
                   <Shield className="w-4.5 h-4.5 text-primary" /> {page.safetyNote.title}
-                </h4>
+                </h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   {page.safetyNote.description}
                 </p>
@@ -103,7 +103,7 @@ export default function Contact() {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="John Doe"
-                        className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                        className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                     <div className="flex flex-col space-y-1.5">
@@ -114,7 +114,7 @@ export default function Contact() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="john@example.com"
-                        className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                        className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                       />
                     </div>
                   </div>
@@ -126,7 +126,7 @@ export default function Contact() {
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
                       placeholder="E.g., Private Charter Inquiry, Course Booking, Custom Package..."
-                      className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
+                      className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors"
                     />
                   </div>
 
@@ -138,7 +138,7 @@ export default function Contact() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Write your message here..."
-                      className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
+                      className="bg-secondary/60 border border-border rounded-lg px-4 py-2.5 text-base sm:text-sm text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                     />
                   </div>
 

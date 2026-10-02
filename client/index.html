@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js): Google Ads conversion tag + GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18460336370"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,25 +10,35 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18460336370');
+
+      // GA4: replace with the real measurement ID from the GA4 property
+      // (Admin > Data streams). Skipped until then so no hits go to a
+      // non-existent property.
+      var GA4_MEASUREMENT_ID = 'G-REPLACE_ME';
+      if (GA4_MEASUREMENT_ID.indexOf('REPLACE_ME') === -1) {
+        gtag('config', GA4_MEASUREMENT_ID);
+      }
     </script>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Dive Dream Divers | Premium SDI & TDI Diving Experiences</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- seo:start -->
+    <title>Dive Dream Divers</title>
+    <!-- seo:end -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
   </head>
 
   <body class="dark">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
 
 </html>

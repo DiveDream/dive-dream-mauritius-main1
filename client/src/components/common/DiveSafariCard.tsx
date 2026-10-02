@@ -13,6 +13,8 @@ export function DiveSafariCard({ site }: { site: DiveSafari }) {
     >
       <img
         src={site.image}
+        loading="lazy"
+        decoding="async"
         alt={site.name}
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
       />

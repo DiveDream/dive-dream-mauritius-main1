@@ -42,6 +42,7 @@ export default function Promotions() {
       {/* Promotions List */}
       <section className="py-24">
         <div className="container max-w-5xl">
+          <h2 className="sr-only">Current promotions</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left items-stretch">
             {promotions.map((promotion) => (
               <PromotionCard

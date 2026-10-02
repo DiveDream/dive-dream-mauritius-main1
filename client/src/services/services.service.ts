@@ -9,6 +9,7 @@ import { formatPrice } from '@/utils';
 
 interface RawService extends StrapiEntryBase {
   title: string;
+  slug?: string | null;
   // May come back as a plain string or, if Strapi has this field configured
   // as Rich Text (Blocks), a JSON array of block nodes — see extractPlainText().
   description: unknown;
@@ -25,7 +26,8 @@ function mapServiceFromStrapi(raw: RawService): Service {
         ? formatPrice({ amount: raw.price.amount ?? 0, currency: raw.price.currency ?? 'USD', unitLabel: raw.price.unitLabel })
         : '';
   return {
-    id: raw.documentId,
+    id: raw.slug || raw.documentId,
+    legacyId: raw.documentId,
     title: raw.title,
     description: extractPlainText(raw.description),
     highlights: normalizeStringArray(raw.highlights),
@@ -46,5 +48,5 @@ export async function getServices(): Promise<Service[]> {
 
 export async function getServiceById(id: string): Promise<Service | undefined> {
   const services = await getServices();
-  return services.find((service) => service.id === id);
+  return services.find((service) => service.id === id || service.legacyId === id);
 }

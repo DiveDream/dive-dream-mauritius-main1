@@ -45,6 +45,8 @@ export default function About() {
               <div className="aspect-video rounded-xl overflow-hidden border border-border shadow-2xl">
                 <img
                   src={page.mission.image}
+                  loading="lazy"
+                  decoding="async"
                   alt="Scuba Training Session"
                   className="w-full h-full object-cover"
                 />
@@ -58,6 +60,8 @@ export default function About() {
               <div className="aspect-video rounded-xl overflow-hidden border border-border shadow-2xl">
                 <img
                   src={page.conservation.image}
+                  loading="lazy"
+                  decoding="async"
                   alt="Coral Reef Restoration"
                   className="w-full h-full object-cover"
                 />

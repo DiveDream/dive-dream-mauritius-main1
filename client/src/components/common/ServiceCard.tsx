@@ -1,6 +1,7 @@
 import { Link } from 'wouter';
 import { ArrowRight, Anchor, Camera, Plane, Compass, Coffee } from 'lucide-react';
 import type { Service } from '@/types';
+import { serviceHref } from '@shared/seo';
 
 interface ServiceCardProps {
   service: Service;
@@ -22,6 +23,8 @@ export function ServiceCard({ service, variant = 'full' }: ServiceCardProps) {
         <div className="h-48 overflow-hidden relative">
           <img
             src={service.image}
+            loading="lazy"
+            decoding="async"
             alt={service.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
@@ -34,7 +37,7 @@ export function ServiceCard({ service, variant = 'full' }: ServiceCardProps) {
           <div className="border-t border-border pt-4 flex items-center justify-between">
             <span className="text-sm font-bold text-foreground">{service.price}</span>
             <Link
-              href={`/services/${service.id}`}
+              href={serviceHref(service.id)}
               className="text-xs text-gold font-bold uppercase tracking-wider hover:underline inline-flex items-center gap-1 py-2.5 -my-2.5"
             >
               View Details <ArrowRight className="w-3.5 h-3.5" />
@@ -53,6 +56,8 @@ export function ServiceCard({ service, variant = 'full' }: ServiceCardProps) {
         <div className="h-52 overflow-hidden relative">
           <img
             src={service.image}
+            loading="lazy"
+            decoding="async"
             alt={service.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
@@ -76,7 +81,7 @@ export function ServiceCard({ service, variant = 'full' }: ServiceCardProps) {
             <span className="text-sm font-bold text-foreground mt-0.5 block">{service.price}</span>
           </div>
           <Link
-            href={`/services/${service.id}`}
+            href={serviceHref(service.id)}
             className="btn-premium-gold !px-4 !py-2 text-xs uppercase tracking-wider font-bold"
           >
             View Details

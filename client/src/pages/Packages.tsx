@@ -23,6 +23,7 @@ export default function Packages() {
       {/* Packages Grid */}
       <section className="py-24">
         <div className="container max-w-5xl">
+          <h2 className="sr-only">Dive packages and prices</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left items-stretch">
             {packages.map((pkg) => (
               <PackageCard key={pkg.id} pkg={pkg} variant="full" />
@@ -33,7 +34,7 @@ export default function Packages() {
           <div className="mt-16 bg-secondary border border-border rounded-xl p-6 text-left flex gap-4 items-start max-w-3xl mx-auto">
             <AlertCircle className="w-6 h-6 text-primary shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <h4 className="text-sm font-semibold text-foreground">{page.notice.title}</h4>
+              <p className="text-sm font-serif font-semibold tracking-wide text-foreground">{page.notice.title}</p>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {page.notice.description}
               </p>

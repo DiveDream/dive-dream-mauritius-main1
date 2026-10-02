@@ -8,6 +8,8 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
         <div className="h-72 overflow-hidden relative">
           <img
             src={member.image}
+            loading="lazy"
+            decoding="async"
             alt={member.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />

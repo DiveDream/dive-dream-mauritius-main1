@@ -22,6 +22,7 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-24">
         <div className="container max-w-5xl">
+          <h2 className="sr-only">Our services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left items-stretch">
             {services.map((service) => (
               <ServiceCard key={service.id} service={service} variant="full" />

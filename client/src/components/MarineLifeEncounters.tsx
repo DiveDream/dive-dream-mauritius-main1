@@ -59,6 +59,8 @@ export default function MarineLifeEncounters() {
                     <div className="h-56 overflow-hidden relative">
                       <img
                         src={creature.img}
+                        loading="lazy"
+                        decoding="async"
                         alt={creature.name}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />

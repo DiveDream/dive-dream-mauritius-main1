@@ -31,6 +31,7 @@ export default function Crew() {
       {/* Crew Profiles */}
       <section className="py-24">
         <div className="container max-w-5xl">
+          <h2 className="sr-only">Meet the crew</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
             {members.map((member) => (
               <TeamMemberCard key={member.id} member={member} />

@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Redirect, Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import RouteSeo from "./components/RouteSeo";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import DiveSafaris from "./pages/DiveSafaris";
@@ -26,13 +27,14 @@ import ExtendedRange from "./pages/courses/ExtendedRange";
 import DeepDiver from "./pages/courses/DeepDiver";
 import EnrichedAirNitrox from "./pages/courses/EnrichedAirNitrox";
 import WreckDiver from "./pages/courses/WreckDiver";
+import DiscoverScubaDiving from "./pages/courses/DiscoverScubaDiving";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/dive-safaris" component={DiveSafaris} />
-      {/* Old slug — permanent redirect so existing links/bookmarks keep working */}
+      {/* Old slug. vercel.json/server 301 this too; this covers in-app navigation. */}
       <Route path="/dive-sites">
         <Redirect to="/dive-safaris" />
       </Route>
@@ -56,6 +58,7 @@ function Router() {
       <Route path="/courses/deep-diver" component={DeepDiver} />
       <Route path="/courses/nitrox" component={EnrichedAirNitrox} />
       <Route path="/courses/wreck-diver" component={WreckDiver} />
+      <Route path="/courses/discover-scuba-diving" component={DiscoverScubaDiving} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -69,6 +72,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
+          <RouteSeo />
           <Router />
         </TooltipProvider>
       </ThemeProvider>

@@ -53,7 +53,7 @@ export interface Homepage {
   coursesSection: SectionHeading & {
     coreCoursesLabel: string;
     specialtyCoursesLabel: string;
-    coreCourses: Pick<Course, 'id' | 'name' | 'overview'>[];
+    coreCourses: Pick<Course, 'id' | 'name' | 'overview' | 'detailPath'>[];
     specialtyNames: string[];
     ctaLabel: string;
   };

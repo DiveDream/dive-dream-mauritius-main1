@@ -233,4 +233,13 @@ export const COURSE_DETAILS: Record<string, Course> = {
     ctaHeading: 'Ready to Go Beyond Recreational Limits?',
     ctaDescription: 'Take the leap into technical diving with expert instruction and advanced training.',
   },
+  // Mirrors the Strapi `discover-scuba-diving` course entry verbatim so the
+  // page still renders if the CMS is unreachable. Keyed by the Strapi slug
+  // (the route), unlike the older pages above.
+  'discover-scuba-diving': {
+    id: 'discover-scuba',
+    name: 'Discover Scuba Diving',
+    overview: 'Try scuba diving without certification. Perfect for beginners wanting to experience the underwater world. Includes a safety briefing, confined water practice, and a guided ocean dive to a maximum depth of 12 metres.',
+    eyebrow: 'Try Diving / No Certification Required',
+  },
 };
