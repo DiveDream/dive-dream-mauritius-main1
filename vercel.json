@@ -6,6 +6,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.divedreammauritius.com"
+        }
+      ],
+      "destination": "https://divedreammauritius.com/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
