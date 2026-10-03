@@ -17,6 +17,31 @@
       "statusCode": 301
     },
     {
+      "source": "/:lang(en|fr)?/about-us/:path*",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/:lang(en|fr)?/the-diving-centre/:path*",
+      "destination": "/about",
+      "statusCode": 301
+    },
+    {
+      "source": "/:lang(en|fr)?/our-diving-spots/:path*",
+      "destination": "/dive-safaris",
+      "statusCode": 301
+    },
+    {
+      "source": "/:lang(en|fr)?/our-destination/:path*",
+      "destination": "/dive-safaris",
+      "statusCode": 301
+    },
+    {
+      "source": "/:lang(en|fr)?/home/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/dive-sites",
       "destination": "/dive-safaris",
       "statusCode": 301
