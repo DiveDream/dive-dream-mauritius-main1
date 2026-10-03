@@ -4,8 +4,8 @@ import { diveSafaris as diveSafariImages } from './media';
 export const DIVE_SAFARIS_PAGE: DiveSafarisPage = {
   hero: {
     eyebrow: 'Marine Expeditions',
-    title: 'Interactive Dive Safaris',
-    description: 'Explore our curated selection of pristine coral reefs, historic wrecks, and dramatic drop-offs. Filter by difficulty or type to find your perfect dive.',
+    title: 'Mauritius Dive Sites & Dive Safaris',
+    description: 'Explore Mauritius dive sites with our curated selection of pristine coral reefs, historic wrecks, and dramatic drop-offs. Filter by difficulty or type to find your perfect dive.',
   },
   mapSection: {
     eyebrow: 'Complete Map',
@@ -15,7 +15,7 @@ export const DIVE_SAFARIS_PAGE: DiveSafarisPage = {
   mapImage: diveSafariImages.map,
   highlightsSection: {
     eyebrow: 'Handpicked',
-    title: 'Featured Dive Safaris',
+    title: 'Featured Dive Sites in Mauritius',
     description: 'Our top picks for unforgettable underwater experiences. Filter by certification or environment to find your perfect dive.',
   },
   certLevels: ['All', 'Beginner', 'Intermediate', 'Advanced', 'Technical'],

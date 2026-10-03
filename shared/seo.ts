@@ -37,44 +37,44 @@ export function socialImage(url?: string | null): string {
 export const ROUTE_SEO: RouteSeo[] = [
   {
     path: '/',
-    title: 'Dive Dream Divers | SDI & TDI Dive Centre, Trou aux Biches',
+    title: 'Scuba Diving Mauritius | SDI & TDI Dive Centre | Dive Dream',
     description:
-      'SDI & TDI 5-Star dive centre in Trou aux Biches, Mauritius, since 2004. Boat dives to 40+ dive sites and scuba courses from Open Water to technical.',
+      'Scuba diving in Mauritius with an SDI & TDI 5-Star dive centre in Trou aux Biches, North Mauritius. Boat dives, courses and packages since 2004.',
     priority: 1.0,
   },
   {
     path: '/dive-safaris',
-    title: 'Dive Sites & Wreck Diving in Mauritius | Dive Dream Divers',
+    title: 'Mauritius Dive Sites & Dive Safaris | Dive Dream Divers',
     description:
-      'Explore 40+ dive sites around Mauritius with Dive Dream Divers, from Coin de Mire and Île Plate to Round Island reefs and wrecks. Book your boat dive.',
+      'Dive Mauritius\' best dive sites: Coin de Mire, Île Plate, Round Island and Passe St-Jacques. Reef, wall and wreck dives by boat from Trou aux Biches.',
     priority: 0.9,
   },
   {
     path: '/packages',
-    title: 'Dive Packages & Pricing | Dive Dream Divers Mauritius',
+    title: 'Dive Packages Mauritius | Boat Diving | Dive Dream Divers',
     description:
-      'Single dives, double-tank trips and 5 or 10 dive packages from Trou aux Biches, Mauritius, guided by an SDI/TDI 5-Star dive centre. Book online.',
+      'Dive packages in Mauritius: single dives, double-tank trips and 5 or 10 dive packages by boat from Trou aux Biches. SDI/TDI 5-Star centre. Book online.',
     priority: 0.9,
   },
   {
     path: '/courses',
-    title: 'SDI & TDI Diving Courses in Mauritius | Dive Dream Divers',
+    title: 'SDI & TDI Certification Courses Mauritius | Dive Dream',
     description:
-      'SDI Open Water to TDI technical diving courses at our 5-Star dive centre in Trou aux Biches, Mauritius. Taught in English, French and German.',
+      'Get SDI or TDI certified in Mauritius: Open Water to technical diving courses at our 5-Star dive centre in Trou aux Biches. English, French, German.',
     priority: 0.9,
   },
   {
     path: '/courses/open-water',
-    title: 'SDI Open Water Diving Course | Trou aux Biches, Mauritius',
+    title: 'SDI Open Water Course Mauritius | Beginner Scuba Diving',
     description:
-      'Get scuba certified in Mauritius. SDI Open Water Diver course for beginners at Dive Dream Divers, an SDI/TDI 5-Star centre in Trou aux Biches.',
+      'Beginner scuba diving in Mauritius: get SDI Open Water certified at Dive Dream Divers, an SDI/TDI 5-Star dive centre in Trou aux Biches.',
     priority: 0.8,
   },
   {
     path: '/courses/advanced-open-water',
-    title: 'Advanced Open Water Course Mauritius | Dive Dream Divers',
+    title: 'Advanced Diver Course Mauritius | Advanced Open Water',
     description:
-      'Advanced Open Water Diver course in Trou aux Biches, Mauritius: five adventure dives to build skills and dive deeper, with an SDI/TDI 5-Star centre.',
+      'Advanced diver course in Trou aux Biches, Mauritius: five adventure dives to build skills and dive deeper, with an SDI/TDI 5-Star dive centre.',
     priority: 0.7,
   },
   {
@@ -100,23 +100,23 @@ export const ROUTE_SEO: RouteSeo[] = [
   },
   {
     path: '/courses/wreck-diver',
-    title: 'SDI Wreck Diver Course Mauritius | Dive Dream Divers',
+    title: 'Wreck Diving Mauritius | SDI Wreck Diver Course',
     description:
       'Wreck diving in Mauritius: SDI Wreck Diver specialty course in Trou aux Biches. Learn to explore shipwrecks safely with SDI/TDI 5-Star instructors.',
     priority: 0.7,
   },
   {
     path: '/courses/extended-range',
-    title: 'TDI Extended Range Technical Diving Course | Mauritius',
+    title: 'TDI Technical Diving Mauritius | Extended Range Course',
     description:
-      'TDI technical diving in Mauritius: SDI/TDI Extended Range (XR) course in Trou aux Biches, training planned decompression dives with Dive Dream Divers.',
+      'TDI technical diving in Mauritius: SDI/TDI Extended Range (XR) course in Trou aux Biches, training planned decompression dives. TDI certification.',
     priority: 0.7,
   },
   {
     path: '/courses/discover-scuba-diving',
-    title: 'Discover Scuba Diving in Mauritius | Dive Dream Divers',
+    title: 'Discover Scuba Diving Mauritius | Dive Dream Divers',
     description:
-      'Try scuba diving in Trou aux Biches, Mauritius, with no certification needed: safety briefing, confined water practice and a guided dive to 12 metres.',
+      'Beginner scuba diving in Trou aux Biches, Mauritius, with no certification needed: safety briefing, confined water practice and a guided dive to 12 m.',
     priority: 0.8,
   },
   {
@@ -128,7 +128,7 @@ export const ROUTE_SEO: RouteSeo[] = [
   },
   {
     path: '/services',
-    title: 'Snorkeling & Boat Charters in Mauritius | Dive Dream Divers',
+    title: 'Snorkeling Mauritius & Boat Charters | Dive Dream Divers',
     description:
       'Guided snorkeling safaris, private boat charters, underwater photography and transfers from Dive Dream Divers in Trou aux Biches, Mauritius.',
     priority: 0.7,
@@ -199,6 +199,13 @@ export const NOT_FOUND_SEO: RouteSeo = {
 // Used for /services/:slug. The runtime and build both call this so the
 // per-service title stays identical in the prerendered HTML and after
 // hydration.
+// Keyword-targeted titles for services whose topic matches a search term;
+// the rest fall back to the Strapi title. Keep each under ~60 characters.
+const SERVICE_TITLE_OVERRIDES: Record<string, string> = {
+  'guided-snorkeling-safaris': 'Guided Snorkeling in Mauritius | Dive Dream Divers',
+  'private-boat-charters': 'Private Dive Boat Charter Mauritius | Dive Dream Divers',
+};
+
 export function serviceDetailSeo(slug: string, title: string, description?: string, image?: string | null): RouteSeo {
   const clean = title.trim();
   const short = clean.replace(/\s*\(.*?\)\s*/g, ' ').trim();
@@ -210,7 +217,7 @@ export function serviceDetailSeo(slug: string, title: string, description?: stri
   ];
   return {
     path: `/services/${slug}`,
-    title: candidates.find((candidate) => candidate.length <= 60) ?? short,
+    title: SERVICE_TITLE_OVERRIDES[slug] ?? candidates.find((candidate) => candidate.length <= 60) ?? short,
     description: truncate(
       description?.replace(/\s+/g, ' ').trim() || `${clean} from Dive Dream Divers, an SDI/TDI 5-Star dive centre in Trou aux Biches, Mauritius.`,
       155,

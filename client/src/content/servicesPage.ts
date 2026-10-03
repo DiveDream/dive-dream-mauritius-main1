@@ -4,8 +4,8 @@ import { shared } from './media';
 export const SERVICES_PAGE: ServicesPage = {
   hero: {
     eyebrow: 'VIP Logistics',
-    title: 'Premium Services',
-    description: 'Beyond elite diving. We provide comprehensive, high-end logistics and luxury add-ons to ensure your marine expedition is perfectly seamless, comfortable, and unforgettable.',
+    title: 'Snorkeling, Boat Charters & Premium Services',
+    description: 'Beyond elite diving. Guided snorkeling, private boat charters, underwater photography, airport transfers and onboard catering keep your Mauritius dive trip seamless, comfortable, and unforgettable.',
   },
   heroImage: shared.coralReef,
 };

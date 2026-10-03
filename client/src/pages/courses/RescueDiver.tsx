@@ -112,7 +112,7 @@ export default function RescueDiver() {
               Book This Course
             </Link>
             <Link href="/courses" className="btn-premium-secondary px-8 py-3 text-base flex items-center justify-center gap-2">
-              View All Courses <ArrowRight className="w-4 h-4" />
+              Explore All SDI &amp; TDI Courses <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

@@ -90,7 +90,7 @@ export default function DiveSafaris() {
                 src={page.mapImage}
                 loading="lazy"
                 decoding="async"
-                alt="Dive Dream Divers — Map of all 47 dive sites across Mauritius"
+                alt="Map of Mauritius dive sites and dive safaris from Dive Dream Divers"
                 className="w-full h-auto object-contain rounded-lg transition-transform duration-700 group-hover:scale-[1.02]"
               />
               <div className="absolute inset-0 rounded-lg ring-1 ring-border pointer-events-none" />

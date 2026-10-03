@@ -40,7 +40,7 @@ export function ServiceCard({ service, variant = 'full' }: ServiceCardProps) {
               href={serviceHref(service.id)}
               className="text-xs text-gold font-bold uppercase tracking-wider hover:underline inline-flex items-center gap-1 py-2.5 -my-2.5"
             >
-              View Details <ArrowRight className="w-3.5 h-3.5" />
+              View Details<span className="sr-only"> for {service.title}</span> <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
@@ -84,7 +84,7 @@ export function ServiceCard({ service, variant = 'full' }: ServiceCardProps) {
             href={serviceHref(service.id)}
             className="btn-premium-gold !px-4 !py-2 text-xs uppercase tracking-wider font-bold"
           >
-            View Details
+            View Details<span className="sr-only"> for {service.title}</span>
           </Link>
         </div>
       </div>

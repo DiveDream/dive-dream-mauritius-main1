@@ -10,8 +10,8 @@ import { shared } from './media';
 export const COURSES_PAGE: CoursesPage = {
   hero: {
     eyebrow: 'Professional Training',
-    title: 'Diving Courses',
-    description: 'Comprehensive training programs from beginner to professional levels. All courses taught by certified instructors with extensive experience.',
+    title: 'SDI & TDI Diving Courses in Mauritius',
+    description: 'Comprehensive SDI and TDI training programs in Trou aux Biches, from beginner to professional levels. All courses taught by certified instructors with extensive experience.',
   },
   heroImage: shared.scubaTraining,
   languagesSection: {

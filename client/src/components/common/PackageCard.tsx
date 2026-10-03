@@ -108,7 +108,7 @@ export function PackageCard({ pkg, variant = 'full' }: PackageCardProps) {
         href={`/reservations?package=${pkg.id}`}
         className="w-full text-center py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 block bg-gold text-gold-foreground hover:bg-gold/90 shadow-lg shadow-gold/20 hover:shadow-gold/30"
       >
-        Book This Package
+        Book This Package<span className="sr-only">: {pkg.name}</span>
       </Link>
     </div>
   );

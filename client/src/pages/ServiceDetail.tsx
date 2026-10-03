@@ -87,7 +87,7 @@ export default function ServiceDetail() {
                   Book This Service
                 </Link>
                 <Link href="/services" className="btn-premium-secondary text-sm flex items-center justify-center gap-2">
-                  View All Services <ArrowRight className="w-4 h-4" />
+                  Explore All Dive Dream Services <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
