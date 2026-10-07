@@ -15,11 +15,10 @@ export const WEBSITE_SETTINGS: WebsiteSettings = {
     whatsapp: 'https://wa.me/23057535352',
     operatingHours: 'Daily: 08:30 AM - 04:30 PM',
   },
-  // TODO: replace with the real profile URLs once provided.
   socialLinks: [
-    { platform: 'instagram', url: '#' },
-    { platform: 'facebook', url: '#' },
-    { platform: 'tiktok', url: '#' },
+    { platform: 'instagram', url: 'https://www.instagram.com/divedreamdivers.mu?stkn=MW9tNnN1a2N5c2ZteA==' },
+    { platform: 'facebook', url: 'https://www.facebook.com/profile.php?id=61591723436810' },
+    { platform: 'tiktok', url: 'https://www.tiktok.com/@dive.dream.center?_r=1&_t=ZS-9ALhFhFciVl' },
   ],
   navLinks: [
     { href: '/', label: 'Home' },

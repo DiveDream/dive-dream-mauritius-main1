@@ -91,7 +91,7 @@ export function mapCourseFromStrapi(raw: RawCourse): Course {
     certificationAwarded: raw.certificationAwarded ?? undefined,
     includedMaterials: normalizeStringArray(raw.includedMaterials),
     price: raw.price
-      ? { amount: raw.price.amount ?? 0, currency: raw.price.currency ?? 'USD', unitLabel: raw.price.unitLabel }
+      ? { amount: raw.price.amount ?? 0, currency: raw.price.currency ?? 'MUR', unitLabel: raw.price.unitLabel }
       : undefined,
     schedule: raw.schedule ?? undefined,
     learningPoints: normalizeStringArray(raw.learningPoints),

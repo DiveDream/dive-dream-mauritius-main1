@@ -23,7 +23,7 @@ function mapServiceFromStrapi(raw: RawService): Service {
     typeof raw.price === 'string'
       ? raw.price
       : raw.price
-        ? formatPrice({ amount: raw.price.amount ?? 0, currency: raw.price.currency ?? 'USD', unitLabel: raw.price.unitLabel })
+        ? formatPrice({ amount: raw.price.amount ?? 0, currency: raw.price.currency ?? 'MUR', unitLabel: raw.price.unitLabel })
         : '';
   return {
     id: raw.slug || raw.documentId,

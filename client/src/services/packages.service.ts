@@ -7,7 +7,7 @@ import { unwrapCollection } from '@/lib/strapiMappers';
 
 interface RawDivePackage extends StrapiEntryBase {
   name: string;
-  // May come back as a plain number (older content, defaults to USD) or the
+  // May come back as a plain number (older content, defaults to MUR) or the
   // structured { amount, currency, unitLabel } price component.
   price?: { amount?: number; currency?: Price['currency']; unitLabel?: string | null } | number;
   divesCount: number;
@@ -21,8 +21,8 @@ interface RawDivePackage extends StrapiEntryBase {
 function mapDivePackageFromStrapi(raw: RawDivePackage): DivePackage {
   const price: Price =
     typeof raw.price === 'number'
-      ? { amount: raw.price, currency: 'USD' }
-      : { amount: raw.price?.amount ?? 0, currency: raw.price?.currency ?? 'USD', unitLabel: raw.price?.unitLabel };
+      ? { amount: raw.price, currency: 'MUR' }
+      : { amount: raw.price?.amount ?? 0, currency: raw.price?.currency ?? 'MUR', unitLabel: raw.price?.unitLabel };
   return {
     id: raw.documentId,
     name: raw.name,
